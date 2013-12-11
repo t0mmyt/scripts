@@ -4,8 +4,12 @@ import sys
 
 iplist = []
 
-for line in sys.stdin.readlines():
-    iplist.append(IPAddress(line))
+try:
+    for line in sys.stdin.readlines():
+	iplist.append(IPAddress(line))
+except:
+    print "Something wasn't just an IP address, bombing out"
+    sys.exit()
 
 iplist.sort
 
