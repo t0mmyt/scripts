@@ -2,10 +2,8 @@
 import sys
 import binascii
 
-still_going = True
-
-while still_going:
+while True:
     a = sys.stdin.read()
     if a == "":
-        still_going = False
+        break
     sys.stdout.write(binascii.unhexlify(a.replace(':','').replace('\n','')))
